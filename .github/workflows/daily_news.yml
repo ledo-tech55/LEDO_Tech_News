@@ -1,0 +1,23 @@
+name: 24-7 Tech News
+
+on:
+  schedule:
+    # Automated: Runs every 30 minutes
+    - cron: '*/30 * * * *'
+  # Manual: Allows you to trigger it from the GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install -r requirements.txt
+      - name: Run LEDO Bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python ledo_bot.py
