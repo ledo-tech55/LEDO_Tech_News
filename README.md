@@ -48,7 +48,7 @@ API: Telegram Bot API
 
 Clone the repository:
 
-git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/LEDO_Tech_News.git
+git clone [https://github.com/](https://github.com/)ledo-tech55/LEDO_Tech_News.git
 
 
 Install dependencies:
